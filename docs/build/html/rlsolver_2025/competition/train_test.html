@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Training &mdash; RLSolver Competition Documentation 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/custom.css?v=e8ce10b2" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=f2a433a1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Testing" href="testing.html" />
+    <link rel="prev" title="Graph Instance" href="graph_instance.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            RLSolver Competition Documentation
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/overview.html">Overview</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">RLSolver Competition 2025</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../task1.html">Task 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_instance.html">Graph Instance</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_environment.html">Build MDP Model</a></li>
+<li class="toctree-l1"><a class="reference internal" href="build_environment.html#environment-setup">Environment Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="submit.html">Submit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="evaluate.html">Evaluate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compared_methods.html">Compared Methods</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">RLSolver Competition Documentation</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">&lt;no title&gt;</a></li>
+      <li class="breadcrumb-item active">Training</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/Open-Finance-Lab/RLSolver-Competition/blob/main/docs/source/rlsolver_2025/competition/train_test.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="training">
+<h1>Training<a class="headerlink" href="#training" title="Link to this heading"></a></h1>
+<p>RLSolver does not require separate training scripts for conventional methods. You can directly run provided solvers on predefined datasets.</p>
+<p>Please refer to the <cite>README.md</cite> for additional dataset details.</p>
+<p>We demonstrate the full pipeline using the <cite>eco</cite> method on 20-node BA graphs.</p>
+<p>The training phase helps the reinforcement learning agent (e.g., <cite>eco</cite>) learn the relationship between graph <strong>topology</strong> and <strong>optimal or near-optimal solutions</strong> (e.g., maximum cut).
+By observing graph structures and receiving rewards based on solution quality, the agent gradually learns a strategy that generalizes to similar unseen graphs.</p>
+<ol class="arabic">
+<li><p><strong>Set basic config in ``config.py``</strong>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ALG</span> <span class="o">=</span> <span class="n">Alg</span><span class="o">.</span><span class="n">eco</span>                                   <span class="c1"># select eco as the RL method</span>
+<span class="n">GRAPH_TYPE</span> <span class="o">=</span> <span class="n">GraphType</span><span class="o">.</span><span class="n">BA</span>                       <span class="c1"># use BA (Barabási–Albert) graph distribution</span>
+<span class="n">NUM_TRAIN_NODES</span> <span class="o">=</span> <span class="mi">20</span>                            <span class="c1"># each training graph has 20 nodes</span>
+<span class="n">TRAIN_INFERENCE</span> <span class="o">=</span> <span class="mi">0</span>                             <span class="c1"># 0 = train mode; 1 = inference mode</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Run training</strong>:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python methods/eco_s2v/main.py</span>
+</pre></div>
+</div>
+<p>This will generate a folder:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>rlsolver/methods/eco_s2v/pretrained_agent/tmp/eco_BA_20spin_p/
+</pre></div>
+</div>
+<p>Inside this folder, multiple <cite>.pth</cite> model snapshots will be saved over time.</p>
+<img alt="../../_images/example_eco_training.png" src="../../_images/example_eco_training.png" />
+</li>
+<li><p><strong>Select the best model from this folder</strong>:</p>
+<p>Edit <code class="docutils literal notranslate"><span class="pre">methods/eco_s2v/config.py</span></code>.
+Find the line:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">NEURAL_NETWORK_SUBFOLDER</span> <span class="o">=</span> <span class="s2">&quot;s2v_BA_20spin_s&quot;</span>
+</pre></div>
+</div>
+<p>To select a different model folder, simply replace the string in <code class="docutils literal notranslate"><span class="pre">NEURAL_NETWORK_SUBFOLDER</span></code> with the name of the desired folder.
+For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">NEURAL_NETWORK_SUBFOLDER</span> <span class="o">=</span> <span class="s2">&quot;eco_BA_20spin_p&quot;</span>
+</pre></div>
+</div>
+<p>Then run:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python methods/eco_s2v/train_and_inference/select_best_neural_network.py</span>
+</pre></div>
+</div>
+<p>It will generate a file like:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>eco_BA_20spin_23_best.pth
+</pre></div>
+</div>
+<img alt="../../_images/best.png" src="../../_images/best.png" />
+</li>
+<li><p><strong>Rename and move the best model</strong>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>eco_BA_20spin_best.pth  →  rlsolver/methods/eco_s2v/pretrained_agent/
+</pre></div>
+</div>
+<img alt="../../_images/move.png" src="../../_images/move.png" />
+</li>
+</ol>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="graph_instance.html" class="btn btn-neutral float-left" title="Graph Instance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="Testing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, SecureFinAI Lab.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -27,4 +27,4 @@ RLSolver Competition Documentation
 
    rlsolver_2025/overview
    rlsolver_2025/task1
-
+   rlsolver_2025/competition/index

@@ -1,7 +1,7 @@
 Build MDP Model
 ===============
 
-In RLSolver, we convert combinatorial optimization problems into Markov Decision Process (MDP) models, allowing reinforcement learning (RL) algorithms to solve them effectively.
+In RLSolver, we first build Markov Decision Process (MDP) model, allowing reinforcement learning (RL) algorithms to solve combinatorial optimizatin (CO) probelms.
 
 The MDP model includes the following components:
 
@@ -9,7 +9,6 @@ The MDP model includes the following components:
 - **Action**: The decision to flip a spin (0 ↔ 1) or take a special action such as "pass".
 - **Reward**: The improvement in the objective function (e.g., increase in cut size).
 - **Transition**: Applying the action updates the state to a new configuration.
-- **Termination**: The episode ends when a maximum number of steps is reached or the solution stabilizes.
 
 For example, in the MaxCut problem:
 

@@ -37,10 +37,10 @@ Key Functions
 ``step(self, action)``
     Executes one step in the environment by flipping a spin or performing an extra action.
     
-    Returns a tuple: ``(observation, reward, done, info)``. The step includes:
+    Returns a tuple: ``(state, reward, done, info)``. The step includes:
 
     - Updating the spin configuration.
-    - Calculating reward based on score change or objective.
+    - Calculating reward based on score change or objective value.
     - Updating observables and global features.
     - Checking if the episode is done (based on steps or irreversible spins).
 

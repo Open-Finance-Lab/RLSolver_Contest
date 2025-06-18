@@ -1,20 +1,24 @@
 Training
 ========
 
-RLSolver does not require separate training scripts for conventional methods. You can directly run provided solvers on predefined datasets.
+RLSolver makes it easy to get started — no separate training scripts are needed for conventional methods. You can run the provided solvers directly on well-prepared datasets.
 
-Please refer to the `README.md` for additional dataset details.
+For more details about available datasets, see the `README.md`.
 
-We demonstrate the full pipeline using the `eco` method on 20-node BA graphs.
+In this guide, we walk through the full pipeline using the `s2v` method on 20-node Barabási–Albert (BA) graphs.
 
-The training phase helps the reinforcement learning agent (e.g., `eco`) learn the relationship between graph **topology** and **optimal or near-optimal solutions** (e.g., maximum cut).  
-By observing graph structures and receiving rewards based on solution quality, the agent gradually learns a strategy that generalizes to similar unseen graphs.
+Built on the structure2vec-DQN framework introduced by Dai et al. (2017) in `Learning Combinatorial Optimization Algorithms over Graphs <https://arxiv.org/abs/1704.01665>`_, the `s2v` method learns to solve graph problems by experience — just like a human would.
 
-1. **Set basic config in ``config.py``**:
+During training, the reinforcement learning agent explores how graph structures relate to optimal (or near-optimal) solutions such as maximum cuts.  
+Through repeated trial and reward, it gradually learns a general strategy that can be applied to new, unseen graphs with similar characteristics.
+
+1. **Set basic config**:
+
+   Edit ``methods\eco_s2v\config.py``.  
 
    .. code-block:: python
 
-      ALG = Alg.eco                                   # select eco as the RL method
+      ALG = Alg.s2v                                   # select s2v as the RL method
       GRAPH_TYPE = GraphType.BA                       # use BA (Barabási–Albert) graph distribution
       NUM_TRAIN_NODES = 20                            # each training graph has 20 nodes
       TRAIN_INFERENCE = 0                             # 0 = train mode; 1 = inference mode
@@ -29,15 +33,16 @@ By observing graph structures and receiving rewards based on solution quality, t
 
    .. code-block:: text
 
-      rlsolver/methods/eco_s2v/pretrained_agent/tmp/eco_BA_20spin_p/
+      rlsolver/methods/eco_s2v/pretrained_agent/tmp/s2v_BA_20spin_b/
 
    Inside this folder, multiple `.pth` model snapshots will be saved over time.
 
-   .. image:: /_static/example_eco_training.png
+   .. image:: /_static/example_s2v_training.png
 
 3. **Select the best model from this folder**:
 
    Edit ``methods/eco_s2v/config.py``.  
+
    Find the line:
 
    .. code-block:: python
@@ -49,7 +54,7 @@ By observing graph structures and receiving rewards based on solution quality, t
 
    .. code-block:: python
 
-      NEURAL_NETWORK_SUBFOLDER = "eco_BA_20spin_p"
+      NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_b"
 
    Then run:
 
@@ -61,7 +66,7 @@ By observing graph structures and receiving rewards based on solution quality, t
 
    .. code-block:: text
 
-      eco_BA_20spin_23_best.pth
+      s2v_BA_20spin_1033_best.pth
 
    .. image:: /_static/best.png
 
@@ -69,7 +74,6 @@ By observing graph structures and receiving rewards based on solution quality, t
 
    .. code-block:: text
 
-      eco_BA_20spin_best.pth  →  rlsolver/methods/eco_s2v/pretrained_agent/
+      s2v_BA_20spin_best.pth  →  rlsolver/methods/eco_s2v/pretrained_agent/
 
    .. image:: /_static/move.png
-

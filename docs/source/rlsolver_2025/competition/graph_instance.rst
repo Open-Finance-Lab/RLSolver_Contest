@@ -32,13 +32,15 @@ Each graph file is a plain text file with the following format:
 Explanation:
 
 - The **first line** contains two integers:
-  - `100`: the number of nodes in the graph.
-  - `384`: the total number of edges.
+
+  * ``100``: the number of nodes in the graph.
+  * ``384``: the total number of edges.
 
 - Each **subsequent line** represents an undirected edge with a unit weight:
-  - The first number is the **source node index**.
-  - The second number is the **target node index**.
-  - The third number is the **edge weight** (always 1 in synthetic datasets).
+
+  * The first number is the **source node index**.
+  * The second number is the **target node index**.
+  * The third number is the **edge weight** (always 1 in synthetic datasets).
 
 - **Node indices are 1-based**, meaning nodes are labeled from `1` to `100`.
 

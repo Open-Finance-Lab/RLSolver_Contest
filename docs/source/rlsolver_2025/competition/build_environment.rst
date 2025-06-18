@@ -1,7 +1,7 @@
 Build MDP Model
 ===============
 
-In RLSolver, we first build Markov Decision Process (MDP) model, allowing reinforcement learning (RL) algorithms to solve combinatorial optimizatin (CO) probelms.
+In RLSolver, we convert combinatorial optimization problems into Markov Decision Process (MDP) models, allowing reinforcement learning (RL) algorithms to solve them effectively.
 
 The MDP model includes the following components:
 
@@ -9,6 +9,7 @@ The MDP model includes the following components:
 - **Action**: The decision to flip a spin (0 ↔ 1) or take a special action such as "pass".
 - **Reward**: The improvement in the objective function (e.g., increase in cut size).
 - **Transition**: Applying the action updates the state to a new configuration.
+- **Termination**: The episode ends when a maximum number of steps is reached or the solution stabilizes.
 
 For example, in the MaxCut problem:
 
@@ -19,7 +20,9 @@ For example, in the MaxCut problem:
 Environment Setup
 =================
 
-This section explains how to define and customize your own environment in the ``rlsolver/methods/eco_s2v/src/envs/spinsystem.py`` file. The SpinSystem class supports both biased and unbiased environments and provides several extensible methods for configuration.
+This section explains how to define and customize your own environment in the ``rlsolver/methods/eco_s2v/src/envs/spinsystem.py`` file. 
+
+The ``SpinSystem`` class supports both biased and unbiased environments and provides several extensible methods for configuration.
 
 Key Functions
 -------------
@@ -37,10 +40,10 @@ Key Functions
 ``step(self, action)``
     Executes one step in the environment by flipping a spin or performing an extra action.
     
-    Returns a tuple: ``(state, reward, done, info)``. The step includes:
+    Returns a tuple: ``(observation, reward, done, info)``. The step includes:
 
     - Updating the spin configuration.
-    - Calculating reward based on score change or objective value.
+    - Calculating reward based on score change or objective.
     - Updating observables and global features.
     - Checking if the episode is done (based on steps or irreversible spins).
 

@@ -8,7 +8,8 @@ pip install sphinx sphinx-autobuild sphinx_rtd_theme
 pip install nbsphinx nbsphinx_link
 ```
 
-Edit in `docs/source/`, and then run on local machine:
+Edit in `docgit diff upstream/main -- docs/source/
+s/source/`, and then run on local machine:
 ```
 cd docs/source
 

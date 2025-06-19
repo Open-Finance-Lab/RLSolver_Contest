@@ -1,5 +1,5 @@
 
-This section introduces the structure of the RLSolver Competition 2025. It includes:
+This section introduces the structure of the RLSolver Contest 2025. It includes:
 
 1. Graph Instance  
 2. Training

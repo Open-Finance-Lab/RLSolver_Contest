@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-RLSolver Competition Documentation
+RLSolver Contest Documentation
 ==================================================
 
 .. Add your content using ``reStructuredText`` syntax. See the
@@ -21,10 +21,9 @@ RLSolver Competition Documentation
 
    intro/overview
 
+
 .. toctree::
    :maxdepth: 2
-   :caption: RLSolver Competition 2025
+   :caption: RLSolver Contest 2025
 
-   rlsolver_2025/overview
-   rlsolver_2025/task1
    rlsolver_2025/competition/index

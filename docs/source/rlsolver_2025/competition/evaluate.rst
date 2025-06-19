@@ -8,16 +8,25 @@ This section describes how different categories of algorithms are evaluated in R
 We evaluate submitted methods according to their type:
 
 1. **Distribution-wise Reinforcement Learning Methods**
+
    - These are RL-based methods that train on distributions of graph instances and are capable of generalizing to unseen instances.
+
    - Evaluation metrics include:
+
      - **Training Time**: Total time required to train the agent across training instances.
+
      - **Inference Time**: Average time to infer a solution for a single test instance.
+
      - **Objective Value**: The primary optimization target, e.g., Maxcut value, tour length, etc.
 
 2. **Conventional Methods**
+
    - These include classical heuristics, local search, greedy algorithms, and solvers like Gurobi or CPLEX.
+
    - Evaluation metrics include:
+
      - **Running Time**: Total time taken to solve a test instance (no training phase).
+
      - **Objective Value**: The final objective value obtained by the algorithm.
 
 **Evaluation Criteria Summary**

@@ -1,7 +1,7 @@
 Evaluate
 ========
 
-This section describes how different categories of algorithms are evaluated in RLSolver Competition 2025.
+This section describes how different categories of algorithms are evaluated in RLSolver Contest 2025.
 
 **Evaluation Categories**
 

@@ -7,8 +7,7 @@ Synthetic graphs are generated with three random distributions:
 - **ER**: Erdős–Rényi
 - **PL**: Power Law
 
-- Node counts range from **100 to 1000**, with 10 graph instances per distribution and size.
-- Files are stored in the `data/` directory. Examples include:
+The number of nodes ranges from **100 to 10000**, with 30 graph instances per distribution and size. Files are stored in the `rlsolver/data/` directory. Examples include:
 
   - `BA_100_ID0.txt <https://github.com/Open-Finance-Lab/RLSolver/tree/master/rlsolver/data/syn_BA>`_.
   - `ER_100_ID0.txt <https://github.com/Open-Finance-Lab/RLSolver/tree/master/rlsolver/data/syn_ER>`_.

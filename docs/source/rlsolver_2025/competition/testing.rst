@@ -8,6 +8,7 @@ The following steps configure and run inference using the trained model on graph
 
    Edit  `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
 
+
    .. code-block:: python
 
       TRAIN_INFERENCE = 1                                              # 1 = inference mode

@@ -15,8 +15,7 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 1. **Set basic config**:
 
    Edit `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
-
-   .. code-block:: python
+  .. code-block:: python
 
       ALG = Alg.s2v                                   # select s2v as the RL method
       GRAPH_TYPE = GraphType.BA                       # use BA (Barabási–Albert) graph distribution

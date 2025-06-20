@@ -1,4 +1,4 @@
-# RLSolver Competition Documentation
+# RLSolver Contest Documentation
 
 To contribute to the documentation, please clone this repo.
 

@@ -6,7 +6,7 @@ The following steps configure and run inference using the trained model on graph
 
 1. **Switch to inference mode**:
 
-   Edit ``methods\eco_s2v\config.py``.  
+   Edit  `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
 
    .. code-block:: python
 
@@ -19,9 +19,7 @@ The following steps configure and run inference using the trained model on graph
 
 2. **Run inference**:
 
-   .. code-block:: console
-
-      python methods/eco_s2v/main.py
+   Run `rlsolver/methods/eco_s2v/main.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/main.py>`_.
 
    This step uses the selected best model to run inference over all test instances.
 

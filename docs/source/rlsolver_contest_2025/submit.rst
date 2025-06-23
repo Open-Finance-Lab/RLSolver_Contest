@@ -21,7 +21,7 @@ Example command:
 
 .. code-block:: bash
 
-   python inference.py --checkpoint checkpoints/best_model.pth --input data/gset_14.txt --output result/result.txt
+   python inference.py --checkpoint checkpoints/best_model.pth --input rlsolver/data/gset_14.txt --output rlsolver/result/result.txt
 
 2. Code Packaging
 ------------------
@@ -36,7 +36,7 @@ Please include:
 3. Solution Format
 ------------------
 
-Your output should be saved in a file called `result.txt` inside the `result/` folder.
+Your output should be saved inside the `rlsolver/result/` folder.
 
 Each line represents the assignment of a node to one of two sets (for MaxCut):
 

@@ -21,7 +21,7 @@ Example command:
 
 .. code-block:: bash
 
-   python inference.py --checkpoint checkpoints/best_model.pth --input rlsolver/data/gset_14.txt --output rlsolver/result/result.txt
+   python inference.py --checkpoint checkpoints/best_model.pth --input rlsolver/data/gset_14.txt --output rlsolver/result/gset_14.txt
 
 2. Code Packaging
 ------------------

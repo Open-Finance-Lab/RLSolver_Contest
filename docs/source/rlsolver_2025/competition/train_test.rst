@@ -24,7 +24,11 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 
 2. **Run training**:
 
-   Run `rlsolver/methods/eco_s2v/main.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/main.py>`_.
+  Run `rlsolver/methods/eco_s2v/main.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/main.py>`_.
+
+   .. code-block:: text
+
+      rlsolver/methods/eco_s2v/main.py 
 
    This will generate a folder:
 
@@ -54,6 +58,10 @@ Through repeated trial and reward, it gradually learns a general strategy that c
       NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_b"
 
    Then run:  `rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/select_best_neural_network.py>`_.  
+
+   .. code-block:: python
+
+      rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py 
 
    It will generate a file like:
 

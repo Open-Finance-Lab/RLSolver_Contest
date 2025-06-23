@@ -7,7 +7,7 @@ For more details about available datasets, see the `README.md`.
 
 In this guide, we walk through the full pipeline using the `s2v` method on 20-node Barabási–Albert (BA) graphs.
 
-Built on the structure2vec-DQN framework introduced by Dai et al. (2017) in `Learning Combinatorial Optimization Algorithms over Graphs <https://arxiv.org/abs/1704.01665>`_, the `s2v` method learns to solve graph problems by experience — just like a human would.
+In the following, take the RL method s2v-DQN as an example: Dai et al. (2017) `Learning Combinatorial Optimization Algorithms over Graphs <https://arxiv.org/abs/1704.01665>`_.
 
 During training, the reinforcement learning agent explores how graph structures relate to optimal (or near-optimal) solutions such as maximum cuts.  
 Through repeated trial and reward, it gradually learns a general strategy that can be applied to new, unseen graphs with similar characteristics.

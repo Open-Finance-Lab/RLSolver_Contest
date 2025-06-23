@@ -5,7 +5,7 @@ This section explains how to submit your solution. It includes three parts:
 
 1. Neural Networks  
 2. Code Packaging  
-3. Solution Format
+3. Solution Files
 
 1. Neural Networks
 ------------------
@@ -33,7 +33,7 @@ Please include:
 - A brief `README.md` with install and run instructions
 
 
-3. Solution Format
+3. Solution Files
 ------------------
 
 Your output can be saved inside the `rlsolver/result/` folder.

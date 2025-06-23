@@ -7,7 +7,7 @@ For more details about available datasets, see the `README.md`.
 
 In this guide, we walk through the full pipeline using the `s2v` method on 20-node Barabási–Albert (BA) graphs.
 
-Built on the structure2vec-DQN framework introduced by Dai et al. (2017) in `Learning Combinatorial Optimization Algorithms over Graphs <https://arxiv.org/abs/1704.01665>`_, the `s2v` method learns to solve graph problems by experience — just like a human would.
+In the following, take the RL method s2v-DQN as an example: Dai et al. (2017) `Learning Combinatorial Optimization Algorithms over Graphs <https://arxiv.org/abs/1704.01665>`_.
 
 During training, the reinforcement learning agent explores how graph structures relate to optimal (or near-optimal) solutions such as maximum cuts.  
 Through repeated trial and reward, it gradually learns a general strategy that can be applied to new, unseen graphs with similar characteristics.
@@ -44,13 +44,8 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 
    Edit `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
 
-   Find the line:
 
-   .. code-block:: python
-
-      NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_s"
-
-   To select a different model folder, simply replace the string in ``NEURAL_NETWORK_SUBFOLDER`` with the name of the desired folder.  
+   To select a different model folder, set the param ``NEURAL_NETWORK_SUBFOLDER`` using the name of the desired folder.  
    For example:
 
    .. code-block:: python

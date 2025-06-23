@@ -1,4 +1,4 @@
-.. RLSolver Competition documentation master file, created by
+.. RLSolver Contest documentation master file, created by
    sphinx-quickstart on Tue Jan 21 19:38:31 2025.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
@@ -26,4 +26,4 @@ RLSolver Contest Documentation
    :maxdepth: 2
    :caption: RLSolver Contest 2025
 
-   rlsolver_2025/competition/index
+   rlsolver_contest_2025/index

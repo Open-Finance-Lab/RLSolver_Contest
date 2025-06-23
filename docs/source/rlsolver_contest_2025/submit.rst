@@ -10,7 +10,7 @@ This section explains how to submit your solution. It includes three parts:
 1. Neural Networks
 ------------------
 
-If your method involves training (e.g., GNN or RL agent), please include:
+If your method involves training (e.g., RL agent), please include:
 
 - `model.py`: model definition  
 - `train.py`: training script  

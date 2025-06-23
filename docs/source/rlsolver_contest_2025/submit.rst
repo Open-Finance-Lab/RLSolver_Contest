@@ -36,7 +36,7 @@ Please include:
 3. Solution Format
 ------------------
 
-Your output should be saved inside the `rlsolver/result/` folder.
+Your output can be saved inside the `rlsolver/result/` folder.
 
 Each line represents the assignment of a node to one of two sets (for MaxCut):
 

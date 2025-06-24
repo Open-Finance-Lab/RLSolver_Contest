@@ -40,10 +40,16 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 
    Edit `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
 
-   Find the line: NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_s"
+   Find the line: 
+
+  .. code-block:: python
+
+      NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_s"
 
    To select a different model folder, set the param ``NEURAL_NETWORK_SUBFOLDER`` using the name of the desired folder.  
    For example:
+
+  .. code-block:: python
 
       NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_b"
 

@@ -40,28 +40,27 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 
    Edit `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
 
-   Find the line: 
+   Find the line:
 
-  .. code-block:: python
+   .. code-block:: python
 
       NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_s"
 
    To select a different model folder, set the param ``NEURAL_NETWORK_SUBFOLDER`` using the name of the desired folder.  
    For example:
 
-  .. code-block:: python
+   .. code-block:: python
 
       NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_b"
 
-   Then run:  `rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/select_best_neural_network.py>`_.  
+   Then run:  
+   `rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/select_best_neural_network.py>`_.
 
-   .. code-block:: python
+   .. code-block:: bash
 
-      python rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py 
+      python rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py
 
-   It will generate a file like:
-
-      s2v_BA_20spin_1033_best.pth
+   It will generate a file like: s2v_BA_20spin_1033_best.pth
 
    .. image:: /_static/best.png
 

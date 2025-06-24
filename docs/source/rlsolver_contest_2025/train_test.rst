@@ -28,13 +28,9 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 
    .. code-block:: text
 
-      rlsolver/methods/eco_s2v/main.py 
+      python rlsolver/methods/eco_s2v/main.py 
 
-   This will generate a folder:
-
-   .. code-block:: text
-
-      rlsolver/methods/eco_s2v/pretrained_agent/tmp/s2v_BA_20spin_b/
+   This will generate a folder:  rlsolver/methods/eco_s2v/pretrained_agent/tmp/s2v_BA_20spin_b/
 
    Inside this folder, multiple `.pth` model snapshots will be saved over time.
 
@@ -44,11 +40,16 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 
    Edit `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
 
+   Find the line: 
+
+  .. code-block:: python
+
+      NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_s"
 
    To select a different model folder, set the param ``NEURAL_NETWORK_SUBFOLDER`` using the name of the desired folder.  
    For example:
 
-   .. code-block:: python
+  .. code-block:: python
 
       NEURAL_NETWORK_SUBFOLDER = "s2v_BA_20spin_b"
 
@@ -56,19 +57,15 @@ Through repeated trial and reward, it gradually learns a general strategy that c
 
    .. code-block:: python
 
-      rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py 
+      python rlsolver/methods/eco_s2v/train_and_inference/select_best_neural_network.py 
 
    It will generate a file like:
-
-   .. code-block:: text
 
       s2v_BA_20spin_1033_best.pth
 
    .. image:: /_static/best.png
 
 4. **Rename and move the best model**:
-
-   .. code-block:: text
 
       s2v_BA_20spin_best.pth  →  rlsolver/methods/eco_s2v/pretrained_agent/
 

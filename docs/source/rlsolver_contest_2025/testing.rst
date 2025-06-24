@@ -24,11 +24,7 @@ The following steps configure and run inference using the trained model on graph
 
    This step uses the selected best model to run inference over all test instances.
 
-   The result files will be saved in:
-
-   .. code-block:: text
-
-      rlsolver/result/syn_BA/
+   The result files will be saved in:  rlsolver/result/syn_BA/
 
    Each result file includes:
 

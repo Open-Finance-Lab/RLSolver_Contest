@@ -22,6 +22,10 @@ The following steps configure and run inference using the trained model on graph
 
    Run `rlsolver/methods/eco_s2v/main.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/main.py>`_.
 
+   .. code-block:: python
+
+   python rlsolver/methods/eco_s2v/main.py
+
    This step uses the selected best model to run inference over all test instances.
 
    The result files will be saved in:  rlsolver/result/syn_BA/

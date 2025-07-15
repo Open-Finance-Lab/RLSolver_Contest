@@ -7,7 +7,7 @@ For more details about available datasets, see the `README.md`.
 
 In this guide, we walk through the full pipeline using the `eeco` method on 20-node Barabási–Albert (BA) graphs.
 
-In the following, take the RL method eeco as an example.
+In the following, take the RL method eeco (an improvement of ECO-DQN: Exploratory Combinatorial Optimization with Reinforcement Learning `<https://aaai.org/ojs/index.php/AAAI/article/view/5723>`) as an example, which support parallel environments. Users also can run other RL methods such as eco and s2v, but they only support one single environment. 
 
 During training, the reinforcement learning agent explores how graph structures relate to optimal (or near-optimal) solutions such as maximum cuts.  
 Through repeated trial and reward, it gradually learns a general strategy that can be applied to new, unseen graphs with similar characteristics.
@@ -17,7 +17,7 @@ Through repeated trial and reward, it gradually learns a general strategy that c
    Edit `rlsolver/methods/eco_s2v/config.py <https://github.com/Open-Finance-Lab/RLSolver/blob/master/rlsolver/methods/eco_s2v/config.py>`_.  
   .. code-block:: python
 
-      ALG = Alg.eeco                                   # select eeco as the RL method
+      ALG = Alg.eeco                                   # select eeco as the RL method. Users also can set it as eco or s2v. 
       GRAPH_TYPE = GraphType.BA                       # use BA (Barabási–Albert) graph distribution
       NUM_TRAIN_NODES = 20                            # each training graph has 20 nodes
       TRAIN_INFERENCE = 0                             # 0 = train mode; 1 = inference mode
